@@ -18,7 +18,19 @@ Goal is to minimise the Kaggle Evaluation score.
 	Kaggle Evaluation score: 0.47941
 	
 	```
+- `bag_of_words_naive_bayes_spacy.ipynb` uses above Multinomial Naive Bayes estimator with a Spacy tokeniser. Alpha=0.05.
+
+	```
+	Average results of 10-fold stratified CV
+
+	Precision: 0.8453698709260064
+	Recall:    0.8482562332086235
+	Macro f1:  0.8462804690851018
 	
+	Kaggle Evaluation score: 0.53489
+
+	```
+
 - `doc2vec.ipynb` trains a doc2vec model on the labeled training data using `gensim`. The approach goes as follows: 
 For each test sentence, create a doc2vec vector and find the most similar sentence vector in the model. Use the author label of that most similar sentence as the prediction.
 
