@@ -16,3 +16,5 @@ Team name: DSKT
 	Kaggle Evaluation score: 0.47941
 	
 	```
+	
+- Currently attempting a doc2vec approach using gensim
