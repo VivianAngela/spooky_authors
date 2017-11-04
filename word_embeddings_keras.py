@@ -17,7 +17,7 @@
 # 20 Newsgroup data can be found at:
 # http://www.cs.cmu.edu/afs/cs.cmu.edu/project/theo-20/www/data/news20.html
 
-# In[ ]:
+# In[1]:
 
 from __future__ import print_function
 
@@ -33,7 +33,7 @@ from keras.layers import Conv1D, MaxPooling1D, Embedding
 from keras.models import Model
 
 
-# In[ ]:
+# In[2]:
 
 BASE_DIR = ''
 GLOVE_DIR = os.path.join(BASE_DIR, 'glove.6B')
@@ -43,7 +43,7 @@ EMBEDDING_DIM = 100
 VALIDATION_SPLIT = 0.2
 
 
-# In[ ]:
+# In[3]:
 
 # first, build index mapping words in the embeddings set
 # to their embedding vector
@@ -62,7 +62,7 @@ f.close()
 print('Found %s word vectors.' % len(embeddings_index))
 
 
-# In[ ]:
+# In[7]:
 
 # second, prepare text samples and their labels
 print('Processing text dataset')
@@ -75,11 +75,14 @@ train['author'] = pd.Categorical(train['author'])
 train['labels'] = train['author'].cat.codes
 labels = train['labels']
 
+labels_index = dict(enumerate(train['author'].cat.categories))
+labels_index = dict((v,k) for k,v in labels_index.items())
+
 print('Found %s texts.' % len(texts))
-print('From %s different authors.' % len(labels))
+print('From %s different authors.' % len(set(labels)))
 
 
-# In[ ]:
+# In[8]:
 
 # finally, vectorize the text samples into a 2D integer tensor
 tokenizer = Tokenizer(num_words=MAX_NB_WORDS)
