@@ -31,12 +31,13 @@ from keras.utils import to_categorical
 from keras.layers import Dense, Input, GlobalMaxPooling1D
 from keras.layers import Conv1D, MaxPooling1D, Embedding
 from keras.models import Model
-
+from keras.models import save_model
+import h5py
 
 # In[2]:
 
 BASE_DIR = ''
-GLOVE_DIR = os.path.join(BASE_DIR, 'glove.6B')
+GLOVE_DIR = os.path.join(BASE_DIR, '../experiments/glove.6B')
 MAX_SEQUENCE_LENGTH = 1000
 MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
@@ -167,5 +168,5 @@ model.fit(x_train, y_train,
 
 # In[ ]:
 
-
+model.save('mymodel_large.h5')
 
