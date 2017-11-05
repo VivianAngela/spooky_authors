@@ -6,22 +6,28 @@ Team name: DSKT
 
 Goal is to minimise the Kaggle Evaluation score.
 
+- `word_embeddings_keras.ipynb` implements Francois Chollet's tutorial for Document Classification in Keras using the GloVe Word Embeddings. The model takes a while to train on CPU and doesn't outperform hand-crafted features out-of-the-box.
+
+```
+Kaggle Evaluation Score: 2.11348
+```
+
 
 - `bag_of_words_stats_ner.ipynb` uses a Bag of Words, text statistics (text length and sentence count) and Named Entity Recognition as features. It uses a Multinomial Naive Bayes model.
 
-```
-Classification report for 80/20 train/test split
-
-             precision    recall  f1-score   support
-
-        EAP       0.83      0.86      0.84      1507
-        HPL       0.85      0.86      0.86      1055
-        MWS       0.87      0.82      0.85      1354
-
-avg / total       0.85      0.85      0.85      3916
-
-Kaggle Evaluation Score: 0.46454
-```
+	```
+	Classification report for 80/20 train/test split
+	
+	             precision    recall  f1-score   support
+	
+	        EAP       0.83      0.86      0.84      1507
+	        HPL       0.85      0.86      0.86      1055
+	        MWS       0.87      0.82      0.85      1354
+	
+	avg / total       0.85      0.85      0.85      3916
+	
+	Kaggle Evaluation Score: 0.46454
+	```
 
 
 - `bag_of_words_baseline.ipynb` follows [sklearn's tutorial for Working with Text data](http://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html). It uses a simple bag of words feature space and trains a Logistic Regression, Multinomial Naive Bayes, and Stochastic Gradient Descent SVM. No hyperparameters have been tuned. The models are evaluated using a 10-fold stratified Cross Validation. Multinomial Naive Bayes fares best out of the box.
