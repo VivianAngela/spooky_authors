@@ -18,7 +18,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.pipeline import make_union
 from sklearn.pipeline import FeatureUnion
 from sklearn.pipeline import Pipeline
-from sklearn.svm import SVC
+from sklearn import svm
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.base import BaseEstimator, TransformerMixin
